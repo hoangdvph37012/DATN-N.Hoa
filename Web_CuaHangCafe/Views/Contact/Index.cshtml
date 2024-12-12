@@ -1,0 +1,99 @@
+﻿@model Web_CuaHangCafe.Models.TbPhanHoi
+
+@{
+    ViewData["Title"] = "Liên hệ";
+    ViewData["Contact"] = "active";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Breadcrumb Begin-->
+<div class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a asp-controller="home" asp-action="index">
+                        <i class="fa-solid fa-house"></i>
+                        Trang chủ
+                    </a>
+                    <span>Liên hệ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Breadcrumb End-->
+
+<!--Contact Section Begin-->
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="contact__content">
+                    <div class="contact__address">
+                        <h5>Thông tin liên hệ</h5>
+                        <ul>
+                            <li>
+                                <h6>
+                                    <i class="fas fa-location-arrow"></i>
+                                    Địa chỉ
+                                </h6>
+                                <p> 229 Đặng Tiến Đông, Đống Đa, Hà Nội</p>
+                            </li>
+                            <li>
+                                <h6>
+                                    <i class="fas fa-phone"></i>
+                                    Điện thoại
+                                </h6>
+                                <p><span>096 599 8668</span></p>
+                            </li>
+                            <li>
+                                <h6>
+                                    <i class="fas fa-envelope"></i>
+                                    Hỗ trợ
+                                </h6>
+                                <p>vperfume.vn@gmail.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contact__form">
+                        <h5>Gửi lời nhắn</h5>
+                        <p class="@TempData["Status"]">@TempData["Message"]</p>
+                        <form asp-action="index">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input
+                                asp-for="TieuDe"
+                                type="text"
+                                class="form-control"
+                                maxlength="50"
+                                placeholder="Tiêu đề"
+                                autocomplete="off"
+                                required />
+                            <input
+                                asp-for="SoDienThoai"
+                                type="tel"
+                                class="form-control"
+                                maxlength="10"
+                                placeholder="Số điện thoại"
+                                autocomplete="off"
+                                required />
+                            <textarea
+                                asp-for="NoiDung"
+                                class="form-control"
+                                placeholder="Lời nhắn"
+                                required>
+                            </textarea>
+                            <button type="submit" value="Create" class="site-btn">Gửi lời nhắn</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="contact__map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29795.50171441682!2d105.820447!3d21.015165!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab7c624b431b%3A0x54dd4594a3e515af!2zMjI5IFAuIMSQ4bq3bmcgVGnhur9uIMSQw7RuZywgVHJ1bmcgTGnhu4d0LCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2sus!4v1733827129395!5m2!1svi!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Contact Section End-->
